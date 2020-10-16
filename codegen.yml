@@ -1,0 +1,14 @@
+overwrite: true
+schema: 'src/**/*/schema.ts'
+documents: null
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
+      - 'typescript-mongodb'
+    config:
+      declarationKind: type
+      mappers:
+        Task: ./generated#TaskDbObject
+      maybeValue: T | undefined
